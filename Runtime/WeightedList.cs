@@ -7,7 +7,7 @@ namespace WeightedList
     [System.Serializable]
     public class WeightedList<T> : ICollection<WeightedElement<T>>
     {
-        private List<WeightedElement<T>> elements;
+        [SerializeField] private List<WeightedElement<T>> elements;
 
         public WeightedList() { }
 
