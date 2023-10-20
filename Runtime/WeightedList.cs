@@ -9,7 +9,7 @@ namespace WeightedList
     {
         [SerializeField] private List<WeightedElement<T>> elements;
 
-        public WeightedList() { }
+        public WeightedList() { elements = new List<WeightedElement<T>>(); }
 
         public T GetRandomElement()
         {
