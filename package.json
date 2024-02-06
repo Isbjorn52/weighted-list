@@ -1,6 +1,6 @@
 {
     "name": "com.isbjorn52.weighted-list",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "displayName": "Weighted List",
     "description": "A small utility for making weighted lists.",
     "unity": "2022.3",

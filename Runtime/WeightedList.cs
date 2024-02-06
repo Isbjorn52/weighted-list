@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace WeightedList
@@ -13,19 +14,27 @@ namespace WeightedList
 
         public T GetRandomElement()
         {
-            List<int> temp = new List<int>();
+            int totalWeight = 0;
+            foreach (var element in elements)
+            {
+                totalWeight += element.weight;
+            }
+
+            float random = Random.value;
 
             for (int i = 0; i < elements.Count; i++)
             {
-                for (int j = 0; j < elements[i].weight; j++)
+                float ratio = elements[i].weight / (float)totalWeight;
+
+                if (random < ratio)
                 {
-                    temp.Add(i);
+                    return elements[i].element;
                 }
+
+                random -= ratio;
             }
 
-            int index = temp[Random.Range(0, temp.Count)];
-
-            return elements[index].element;
+            return elements.Last().element;
         }
 
         public int Count => elements.Count;

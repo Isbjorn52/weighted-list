@@ -6,3 +6,6 @@ Moved `WeightedListPropertyDrawer` to `Editor` folder and made a asembly definit
 
 # 1.1.2
 Fixed issue with `WeightedList`'s constructor.
+
+# 1.1.3
+Improved algorithm to not create giant lists.
